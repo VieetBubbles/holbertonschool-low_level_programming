@@ -8,21 +8,21 @@
 
 int main(void)
 {
-	int a;
-	int b;
+	int first;
+	int second;
 
-	a = 0;
-	while (a <= 98)
+	first = 0;
+	while (first <= 98)
 	{
-		b = a + 1;
-		while (b <= 99)
+		second = first + 1;
+		while (second <= 99)
 		{
-			putchar(a / 10 % 10 + '0');
-			putchar(a % 10 + '0');
+			putchar(first / 10 + '0');
+			putchar(first % 10 + '0');
 			putchar(' ');
-			putchar(b / 10 % 10 + '0');
-			putchar(b % 10 = '0');
-			if (a == 98 && b == 99)
+			putchar(second / 10 + '0');
+			putchar(second % 10 + '0');
+			if (first == 98 && second == 99)
 			{
 				putchar('\n');
 			}
@@ -31,9 +31,9 @@ int main(void)
 				putchar(',');
 				putchar(' ');
 			}
-			b++;
+			second++;
 		}
-		a++;
+		first++;
 	}
 	return (0);
 }
