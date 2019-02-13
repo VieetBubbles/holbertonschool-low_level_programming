@@ -9,9 +9,9 @@
 int main(void)
 {
 	int number;
-	int a;
-	int b;
-	int c;
+	long int a = 1;
+	long int b = 2;
+	long int c = 0;
 
 	for (number = 3; number <= 50; number++)
 	{
