@@ -11,9 +11,14 @@ int main(void)
 	long int i;
 	long int j = 612852475143;
 
-	for (i = 2; i < j; i++)
+	i = 2;
+	while(i < j)
 	{
-		j = j / i;
+		while(j % i == 0)
+		{
+			j = j / i;
+		}
+		i++;
 	}
 	printf("%li\n", j);
 	return (0);
