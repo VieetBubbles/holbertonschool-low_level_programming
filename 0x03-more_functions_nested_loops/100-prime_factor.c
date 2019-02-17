@@ -12,9 +12,9 @@ int main(void)
 	long int j = 612852475143;
 
 	i = 2;
-	while(i < j)
+	while (i < j)
 	{
-		while(j % i == 0)
+		while (j % i == 0)
 		{
 			j = j / i;
 		}
