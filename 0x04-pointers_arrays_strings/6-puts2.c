@@ -1,4 +1,5 @@
 #include "holberton.h"
+int _strlen(char *s);
 
 /**
  * puts2 - function that prints one char out of 2 of a string,
@@ -21,4 +22,23 @@ void puts2(char *str)
 		_putchar(str[i]);
 	}
 	_putchar('\n');
+}
+
+/**
+ * _strlen - function that returns the length of a string
+ * @s: pointer to a char
+ *
+ * Return: the string length
+ */
+
+int _strlen(char *s)
+{
+	int length;
+
+	length = 0;
+	while (s[length])
+	{
+		length++;
+	}
+	return (length);
 }
