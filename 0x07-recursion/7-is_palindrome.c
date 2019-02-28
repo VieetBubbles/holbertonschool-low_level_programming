@@ -16,11 +16,6 @@ int is_palindrome(char *s)
 
 	len = _strLen(s) - 1;
 
-	/* An empty string is considered as palindrome */
-	if (len == 0)
-	{
-		return (1);
-	}
 	return (check_ifPalindrome(s, 0, len));
 }
 
@@ -33,14 +28,14 @@ int is_palindrome(char *s)
 
 int _strLen(char *str)
 {
-	int length;
-
-	length = 0;
-	while (str[length])
+	if (!*str)
 	{
-		length++;
+		return (0);
 	}
-	return (length);
+	else
+	{
+		return (1 + _strLen(str + 1));
+	}
 }
 
 /**
