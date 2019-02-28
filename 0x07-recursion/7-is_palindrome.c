@@ -57,14 +57,14 @@ int check_ifPalindrome(char str[], int s, int e)
 	}
 
 	/* if 1st and last characters do not match */
-	else if (str[s] != str[e])
+	if (str[s] != str[e])
 	{
 		return (0);
 	}
 
 /* If there are more than two characters, check if */
 /* middle substring is also palindrome or not. */
-	else if (s < e + 1)
+	if (s < e + 1)
 	{
 		return (check_ifPalindrome(str, s + 1, e - 1));
 	}
