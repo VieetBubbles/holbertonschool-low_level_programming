@@ -29,7 +29,7 @@ int find_SquareRoot(int value, int sqrt)
 		return (sqrt);
 	}
 
-	else if (sqrt * sqrt < 0)
+	else if (sqrt * sqrt > 0)
 	{
 		return (-1);
 	}
