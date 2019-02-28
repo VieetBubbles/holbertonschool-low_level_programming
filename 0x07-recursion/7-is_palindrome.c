@@ -51,7 +51,7 @@ int _strLen(char *str)
 int check_ifPalindrome(char str[], int s, int e)
 {
 	/* if there is only 1 character */
-	if (str[s] == str[e])
+	if (s == e)
 	{
 		return (1);
 	}
