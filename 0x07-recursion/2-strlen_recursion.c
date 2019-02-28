@@ -12,7 +12,7 @@ int _strlen_recursion(char *s)
 	/* If we reach the end of the string */
 	if (!*s)
 	{
-		return(0);
+		return (0);
 	}
 	else
 	{
