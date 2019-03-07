@@ -26,7 +26,7 @@ char *argstostr(int ac, char **av)
 		len += _strlen(av[i]) + 1;
 	}
 
-	/* Dynamically allocate memory for the string plus the null byte*/
+	/* Dynamically allocate memory for the string plus the null byte */
 	ptr = malloc(sizeof(char) * len + 1);
 	if (!ptr)
 	{
@@ -41,8 +41,7 @@ char *argstostr(int ac, char **av)
 		{
 			ptr[k] = av[i][j];
 		}
-		ptr[k] = '\n';
-		k++;
+		ptr[k++] = '\n';
 	}
 	ptr[k] = '\0';
 	return (ptr);
