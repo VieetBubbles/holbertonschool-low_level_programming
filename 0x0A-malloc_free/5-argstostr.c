@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
+int _strlen(char *str);
 
 /**
  * argstostr - function that concatenates all the arguments of your program
@@ -41,7 +42,8 @@ char *argstostr(int ac, char **av)
 		{
 			ptr[k] = av[i][j];
 		}
-		ptr[k++] = '\n';
+		ptr[k] = '\n';
+		k++;
 	}
 	ptr[k] = '\0';
 	return (ptr);
