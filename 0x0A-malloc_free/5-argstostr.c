@@ -36,7 +36,8 @@ char *argstostr(int ac, char **av)
 	/* Goes through each argument and check for the */
 	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; av[i][j] != '\0'; j++, k++)
+		len = _strlen(av[i]);
+		for (j = 0; j < len; j++, k++)
 		{
 			ptr[k] = av[i][j];
 		}
