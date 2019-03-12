@@ -27,7 +27,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	/* Store duplicated string into variable nameSCpy */
 	nameSCpy = _strdup(name);
-	if (!nameSCpy && !name)
+	if (!nameSCpy && name)
 	{
 		free(ddd);
 		return (NULL);
@@ -35,7 +35,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	/* Store other duplicated string into variable ownerSCpy */
 	ownerSCpy = _strdup(owner);
-	if (!ownerSCpy && !owner)
+	if (!ownerSCpy && owner)
 	{
 		free(nameSCpy);
 		free(ddd);
