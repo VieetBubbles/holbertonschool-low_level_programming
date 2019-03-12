@@ -17,6 +17,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	char *nameSCpy;
 	char *ownerSCpy;
 
+	/* Had help from Marc and Juno for how to use and where to place the strdup */
 	/* Dynamically allocate memory for the new struct called ddd */
 	ddd = malloc(sizeof(ddd));
 	if (!ddd)
@@ -36,7 +37,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	ownerSCpy = _strdup(owner);
 	if (!ownerSCpy && !owner)
 	{
-		free(ownerSCpy);
+		free(nameSCpy);
 		free(ddd);
 		return (NULL);
 	}
