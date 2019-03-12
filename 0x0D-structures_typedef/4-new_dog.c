@@ -19,7 +19,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	/* Had help from Marc and Juno for how to use and where to place the strdup */
 	/* Dynamically allocate memory for the new struct called ddd */
-	ddd = malloc(sizeof(ddd));
+	ddd = malloc(sizeof(dog_t));
 	if (!ddd)
 	{
 		return (NULL);
@@ -62,8 +62,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 char *_strdup(char *str)
 {
 	char *ptr;
-	int i;
-	int len;
+	unsigned int i;
+	unsigned int len;
 
 	if (str == 0)
 	{
@@ -96,7 +96,7 @@ char *_strdup(char *str)
 
 int _strlen(char *str)
 {
-	int length = 0;
+	unsigned int length = 0;
 
 	while (str[length])
 	{
