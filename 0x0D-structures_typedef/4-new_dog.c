@@ -62,8 +62,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 char *_strdup(char *str)
 {
 	char *ptr;
-	unsigned int i;
-	unsigned int len;
+	int i;
+	int len;
 
 	if (str == 0)
 	{
@@ -96,7 +96,7 @@ char *_strdup(char *str)
 
 int _strlen(char *str)
 {
-	unsigned int length = 0;
+	int length = 0;
 
 	while (str[length])
 	{
