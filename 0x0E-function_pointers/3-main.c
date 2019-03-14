@@ -45,7 +45,7 @@ int main(int argc, char **argv)
 	num2 = atoi(argv[3]);
 
 	/* get the correct operator and calculate numbers as a integer */
-	result = get_op_func(argv[2])(num1, num2);
+	result = pop(num1, num2);
 
 	/* Print out the calculated number */
 	printf("%d\n", result);
