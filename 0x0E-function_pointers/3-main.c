@@ -14,7 +14,6 @@ int main(int argc, char **argv)
 {
 	int num1, num2, result;
 	int (*pop)(int, int);
-	char optr;
 
 	/* Had Tu help me with strcmp and usage of function pointers */
 	/* Checks if the number of arguments is wrong */
@@ -33,12 +32,6 @@ int main(int argc, char **argv)
 	}
 
 	/* handles if the user tries to divide (/ or %) by 0 */
-	optr = *argv[2];
-	if ((optr == '/' || optr == '%') && !(strcmp(argv[3], "0")))
-	{
-		printf("Error\n");
-		exit(100);
-	}
 
 	/* set the numbers to integer values*/
 	num1 = atoi(argv[1]);
