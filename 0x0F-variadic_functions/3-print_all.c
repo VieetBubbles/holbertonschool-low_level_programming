@@ -9,7 +9,7 @@
 
 void _print_char(va_list ap)
 {
-	printf("%c", va_arg(args, int));
+	printf("%c", va_arg(ap, int));
 }
 
 /**
@@ -21,7 +21,7 @@ void _print_char(va_list ap)
 
 void _print_int(va_list ap)
 {
-	printf("%i", va_arg(args, int));
+	printf("%i", va_arg(ap, int));
 }
 
 /**
@@ -33,7 +33,7 @@ void _print_int(va_list ap)
 
 void _print_float(va_list ap)
 {
-	printf("%f", va_arg(args, double));
+	printf("%f", va_arg(ap, double));
 }
 
 /**
@@ -47,7 +47,7 @@ void _print_string(va_list ap)
 {
 	char *s;
 
-	s = va_arg(args, char *);
+	s = va_arg(ap, char *);
 
 	if (!s)
 	{
@@ -76,9 +76,9 @@ void print_all(const char * const format, ...)
 	char *separator = "";
 	va_list ap;
 
-	va_start(args, format);
+	va_start(ap, format);
 
-	while (format[i])
+	while (format[i] && format)
 	{
 		j = 0;
 		while (array[j].po)
@@ -86,7 +86,7 @@ void print_all(const char * const format, ...)
 			if (format[i] == *array[j].po)
 			{
 				printf("%s", separator);
-				array[j].f(args);
+				array[j].f(ap);
 				separator = ", ";
 			}
 			j++;
@@ -94,5 +94,5 @@ void print_all(const char * const format, ...)
 		i++;
 	}
 	printf("\n");
-	va_end(args);
+	va_end(ap);
 }
