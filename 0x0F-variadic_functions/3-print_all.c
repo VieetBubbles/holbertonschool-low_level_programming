@@ -78,7 +78,7 @@ void print_all(const char * const format, ...)
 
 	va_start(ap, format);
 
-	while (format[i] && format)
+	while (format && format[i])
 	{
 		j = 0;
 		while (array[j].po)
