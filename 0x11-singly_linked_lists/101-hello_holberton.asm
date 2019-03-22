@@ -6,7 +6,7 @@ msg:	db "Hello, Holberton", 0
 	extern printf
 	global main
 main:
-	mov esi, msg
+	mov esi, msg		;used site https://montcs.bloomu.edu/~bobmon/Code/Asm.and.C/hello-asms.html
 	mov edi, fmt
 	mov eax, 0
 	call printf
