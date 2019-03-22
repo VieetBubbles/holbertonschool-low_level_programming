@@ -5,8 +5,8 @@ msg:	db "Hello Holberton", 0
 
 	section .text
 	extern printf
-	global _start
-_start:
+	global main
+main:
 	mov exd, msg1
 	mov esi, 1		;used website https://montcs.bloomu.edu/~bobmon/Code/Asm.and.C/hello-asms.html
 	mov edi, fmt
