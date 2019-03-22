@@ -8,9 +8,10 @@ msg:	db "Hello Holberton", 0
 	global main
 main:
 	mov exd, msg1
-	mov esi, 1		;used website https://montcs.bloomu.edu/~bobmon/Code/Asm.and.C/hello-asms.html
+	mov esi, 1
 	mov edi, fmt
 	mov eax, 0
 	call printf
+
 	mov eax, 0
-	mov ebx, 0
+	ret
