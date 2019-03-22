@@ -7,7 +7,7 @@
  * Return: the string length
  */
 
-int _strlen(char *s)
+int _strlen(const char *s)
 {
 	int length;
 
@@ -38,6 +38,7 @@ list_t *add_node(list_t **head, const char *str)
 	{
 		return (NULL);
 	}
+
 	if (str)
 	{
 		/* Put in the data/string && len */
@@ -46,8 +47,14 @@ list_t *add_node(list_t **head, const char *str)
 	}
 	else
 	{
+		/* Put in the data if str is NULL */
 		new_node->len = 0;
 		new_node->str = NULL;
+	}
+	if (!new_node->str)
+	{
+		free(new_node);
+		return (NULL);
 	}
 
 	/* Make next of new node as head */
