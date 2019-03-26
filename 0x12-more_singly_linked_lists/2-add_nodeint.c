@@ -19,27 +19,17 @@ listint_t *add_nodeint(listint_t **head, const int n)
 	{
 		return (NULL);
 	}
-
-	if (n)
+	if (!head)
 	{
-		/* Put in the data/integer */
-		new_node->n = n;
+		return (NULL);
 	}
-	else
-	{
-		/* Put in the data if int is NULL */
-		new_node->n = 0;
-		if (!new_node->n)
-		{
-			free(new_node);
-			return (NULL);
-		}
-	}
+	/* Put in the data/integer */
+	new_node->n = n;
 
 	/* Make next of new node as head */
 	new_node->next = *head;
 
 	/* Move the head to point to the new node */
 	*head = new_node;
-	return (*head);
+	return (new_node);
 }
