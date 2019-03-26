@@ -18,21 +18,13 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 	new_node = malloc(sizeof(listint_t));
 	if (!new_node)
 		return (NULL);
-	if (n)
+	if (!head)
 	{
-		/* Put in the data/integer */
-		new_node->n = n;
+		return (NULL);
 	}
-	else
-	{
-		/* Put in the data of int is NULL */
-		new_node->n = 0;
-		if (!new_node->n)
-                {
-                        free(new_node);
-                        return (NULL);
-                }
-	}
+	/* Put in the data/integer */
+	new_node->n = n;
+
 	/* This new node is going to  be the last last node, */
 	/* So make next of it as NULL*/
 	new_node->next = NULL;
