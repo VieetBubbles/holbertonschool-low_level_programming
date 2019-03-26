@@ -17,7 +17,8 @@ int pop_listint(listint_t **head)
 	{
 		return (0);
 	}
-	while (*head)
+
+	if (*head)
 	{
 		data = (*head)->n;
 		next_node = (*head)->next;
