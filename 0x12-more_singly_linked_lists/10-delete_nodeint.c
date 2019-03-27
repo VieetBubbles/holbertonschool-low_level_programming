@@ -17,21 +17,29 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 
 	if (*head == NULL)
 		return (-1);
-
+	/* If head needs to be removed */
 	if (index == 0)
 	{
-		*head = temp->next;
-		free(temp);
+		*head = temp->next; /* Change head */
+		free(temp); /* free old head  */
 		return (1);
 	}
+	/* Find previous node of the node to be deleted */
 	for (i = 0; temp != NULL && i < index - 1; i++)
+	{
 		temp = temp->next;
-
+	}
+	/* If position is more than number of nodes */
 	if (temp == NULL || temp->next == NULL)
+	{
 		return (-1);
-
+	}
+	/* Node temp->next is the node to be deleted */
+	/* Store pointer to the next of node to be deleted */
 	next_node = temp->next->next;
+	/* Unlink the node from linked list */
 	free(temp->next);
+	/*Unlink the deleted node from list*/
 	temp->next = next_node;
 	return (1);
 }
