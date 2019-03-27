@@ -22,10 +22,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	while (i < idx)
 	{
-		if (!h)
-		{
-			return (NULL);
-		}
 		prev = h;
 		h = h->next;
 		i++;
@@ -48,3 +44,11 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	}
 	return (new_node);
 }
+
+/* When inserting a node in the middle of a linked list, you need to update */
+/* the next field of the previous node that is before the position to point */
+/* at the new node. */
+
+/* When inserting a node in the front of a linked list, you need to update */
+/* the list's head pointer to point at the new node, which now points at the */
+/* old head in its next field. */
