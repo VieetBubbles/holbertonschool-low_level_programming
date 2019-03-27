@@ -27,3 +27,8 @@ int pop_listint(listint_t **head)
 	}
 	return (data);
 }
+
+/* You create a temp so you can store the address of element next to head, */
+/* which is about to become head. Then you delete whats in head, and declare */
+/* head to be temp->next. Now head points to what used to be second element */
+/* in the list. */
