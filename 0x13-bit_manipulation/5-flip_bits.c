@@ -11,7 +11,7 @@
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned long int max_bits = sizeof(n) * 8 - 1;
+	unsigned long int max_bits = sizeof(n) * 8;
 	unsigned long int num = n ^ m;
 	unsigned long int i = 0;
 	unsigned long int count = 0;
