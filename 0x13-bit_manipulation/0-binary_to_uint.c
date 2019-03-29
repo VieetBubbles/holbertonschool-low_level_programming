@@ -24,6 +24,7 @@ unsigned int binary_to_uint(const char *b)
 		{
 			return (0);
 		}
+		/* b101 = 0 x 2 + 1 = 1 -> 1 x 2 + 0 = 2 -> 2 x 2 + 1 = 5 */
 		num = num * 2 + (*b - '0');
 		b++;
 	}
