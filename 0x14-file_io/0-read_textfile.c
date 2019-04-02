@@ -20,7 +20,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	/* Set the file descriptor */
 	fd = open(filename, O_RDONLY);
 
-	/* check if file descriptor is -1 */
+	/* check if file descriptor fails */
 	if (fd < 0)
 		return (0);
 
@@ -36,16 +36,18 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	r = read(fd, buffer, letters);
 	close(fd);
 
-	/* check if r is -1 */
+	/* check if r fails */
 	if (r < 0)
 	{
 		return (0);
+		free(buffer);
 	}
 
-	/* store the printed charcters inside variable w */
+	/* store the printed characters inside variable w */
 	w = write(STDOUT_FILENO, buffer, r);
+	free(buffer);
 
-	/* check if w is -1 */
+	/* check if w fails */
 	if (w < 0)
 		return (0);
 	return (w);
