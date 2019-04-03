@@ -34,7 +34,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	/* store the read-only amount of characters */
 	r = read(fd, buffer, letters);
-	close(fd);
 
 	/* check if r fails */
 	if (r < 0)
@@ -50,5 +49,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	/* check if w fails */
 	if (w < 0)
 		return (0);
+	close(fd);
 	return (w);
 }
