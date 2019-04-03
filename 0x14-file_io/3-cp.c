@@ -24,19 +24,20 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
+
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	r = read(file_from, buffer, 1024);
-	if (r < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
-	while (r > 0)
+	while (r = read(file_from, buffer, 1024) > 0)
 	{
 		if (file_to < 0 || write(file_to, buffer, r) != r)
 			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
 		exit(99);
 	}
+	if (r < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
+
 	closef = close(file_from);
 	closet = close(file_to);
 	if (closef < 0 || closet < 0)
