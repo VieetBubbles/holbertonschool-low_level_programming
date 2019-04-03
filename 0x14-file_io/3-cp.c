@@ -13,6 +13,7 @@ int main(int argc, char **argv)
 	int f_from, f_to, r, closef, closet;
 	char buffer[1024];
 
+	/* Tu guided me through the problem */
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
@@ -20,7 +21,8 @@ int main(int argc, char **argv)
 	f_from = open(argv[1], O_RDONLY);
 	if (f_from < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
 	}
 	f_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	while ((r = read(f_from, buffer, 1024)) > 0)
@@ -32,7 +34,8 @@ int main(int argc, char **argv)
 	}
 	if (r < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
 	}
 	closef = close(f_from);
 	if (closef < 0)
