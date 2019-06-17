@@ -12,10 +12,9 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *cur = NULL, *ptr = NULL, *prev_node = NULL;
 
-	cur = *list;
-	if (!cur || cur->next == NULL)
+	if (*list == NULL)
 		return;
-
+	cur = *list;
 	while (cur)
 	{
 		prev_node = cur->prev;
