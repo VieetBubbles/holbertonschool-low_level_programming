@@ -12,7 +12,6 @@
 void selection_sort(int *array, size_t size)
 {
 	size_t minimum, i, j;
-	size_t flag = 0;
 
 	if (!array || !size)
 		return;
@@ -27,17 +26,15 @@ void selection_sort(int *array, size_t size)
 			if (array[j] < array[minimum])
 			{
 				minimum = j;
-				flag = 0;
 			}
 		}
 
-		swap_int(&array[i], &array[minimum]);
-
-		if (flag == 0)
+		if (array[i] > array[minimum])
 		{
+			swap_int(&array[i], &array[minimum]);
 			print_array(array, size);
-			flag = 1;
 		}
+
 	}
 }
 
