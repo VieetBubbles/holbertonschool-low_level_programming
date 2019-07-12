@@ -10,30 +10,32 @@ def island_perimeter(grid):
     """
     island_perimeter = 0
 
-    for outer_list_number in range(0, len(grid)):
-        for nested_index in range(0, len(grid[outer_list_number])):
+    for i, row in enumerate(grid):
+        for j, number in enumerate(row):
 
-            if grid[outer_list_number][nested_index] == 1:
+            if number == 1:
 
-                if outer_list_number == 0:
+                if i == 0:
                     island_perimeter += 1
-                elif grid[outer_list_number - 1][nested_index] == 0:
+                elif grid[i - 1][j] == 0:
                     island_perimeter += 1
                     # gets the perimeter on the top/up side of the island
 
-                if nested_index == 0:
+                if j == 0:
                     island_perimeter += 1
-                elif grid[outer_list_number][nested_index - 1] == 0:
+                elif grid[i][j - 1] == 0:
                     island_perimeter += 1
                     # gets the perimeter on the left side of the island
 
-                if grid[outer_list_number][nested_index + 1] == 0:
+                if j == len(grid[i]) - 1:
+                    island_perimeter += 1
+                elif grid[i][j + 1] == 0:
                     island_perimeter += 1
                     # gets the perimeter on the right side of the island
 
-                if outer_list_number == len(grid) - 1:
+                if i == len(grid) - 1:
                     island_perimeter += 1
-                elif grid[outer_list_number + 1][nested_index] == 0:
+                elif grid[i + 1][j] == 0:
                     island_perimeter += 1
                     # gets the perimeter on the bottom side of the island
 
