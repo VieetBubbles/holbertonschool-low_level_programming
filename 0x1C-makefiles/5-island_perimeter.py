@@ -33,7 +33,9 @@ def island_perimeter(grid):
                     island_perimeter += 1
                     # gets the perimeter on the right side of the island
 
-                if grid[outer_list_number + 1][nested_index] == 0:
+                if outer_list_number == len(grid) - 1:
+                    island_perimeter += 1
+                elif grid[outer_list_number + 1][nested_index] == 0:
                     island_perimeter += 1
                     # gets the perimeter on the bottom side of the island
 
