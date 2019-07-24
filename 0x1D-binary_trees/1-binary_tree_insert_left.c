@@ -25,10 +25,12 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 	/* places the new new node into the middle of a existing branch */
 	if (parent->left)
 	{
-		/* places the newNode under the left side of the parent */
+		/* The newNode's left pointer is pointing to what the */
+		/* parent's left pointer was originally pointing to. */
 		newNode->left = parent->left;
 
-		/* make the child below the newNode point the the NewNode */
+		/* make the child below the newNode's left pointer point up */
+		/* at the the NewNode. */
 		newNode->left->parent = newNode;
 	}
 
